@@ -69,13 +69,11 @@ class Kurungika {
     fun thirdStep() {
         println("\nShiremwo ivy'iri rungikwa ry'amahera:\n0. Gusubira inyuma\n")
 
-        val x = getInput()
-
-        val pattern = Regex("[a-zA-Z]")
+        val x = readln()
 
         if (x == 0) {
             secondStep()
-        } else if (pattern.matches(x.toString())) {
+        } else if (x.length > 1) {
             fourthStep()
         } else println("\nNo choice")
     }
@@ -96,7 +94,7 @@ class Kurungika {
 
     fun finalStep() {
         println(
-                "\nKwemeza: Kurungika amahera 200 FBU aja kuri Ineza Ange Fleurisse, 61004331 ya kurungika, amahera bitwara: 0 FBU,\nHitemwo:\n1. Ego\n2. Oya"
+                "\nKwemeza: Kurungika amahera 200 FBU aja kuri Ineza Ange Fleurisse, 61004331 ya kurungika, amahera bitwara: 0 FBU,\nHitemwo:\n1. Ego\n2. Oya\n"
         )
 
         val x = getInput()
