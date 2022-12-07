@@ -71,11 +71,9 @@ class Kurungika {
 
         val x = readln()
 
-        if (x == 0) {
+        if (x.contains("0") && x.length == 1) {
             secondStep()
-        } else if (x.length > 1) {
-            fourthStep()
-        } else println("\nNo choice")
+        } else fourthStep()
     }
 
     fun fourthStep() {
