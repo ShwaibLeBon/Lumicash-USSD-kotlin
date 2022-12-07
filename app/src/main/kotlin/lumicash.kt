@@ -47,7 +47,10 @@ class Kurungika {
             HomeScreen().init()
         } else if (pattern.matches(x.toString())) {
             secondStep()
-        } else println("\nNo choice")
+        } else if (!pattern.matches(x.toString())) { 
+			println("\nNuméro invalide")
+			firstStep()
+		} else println("\nNo choice")
     }
 
     // Step to add the amount
@@ -56,13 +59,16 @@ class Kurungika {
 
         val x = getInput()
 
-        val pattern = Regex("^[0-9]{3,8}$")
+        val pattern = Regex("^[0-9]{4,7}$")
 
         if (x == 0) {
             firstStep()
         } else if (pattern.matches(x.toString())) {
             thirdStep()
-        } else println("\nNo choice")
+        } else if (!pattern.matches(x.toString())) {
+			println("\nNtimushobora kurungika amahera ari musi y'igihumbi canke ashika imiliyoni cumi\n")
+			secondStep()
+		} else println("\nNo choice")
     }
 
     // Step to add the amount
@@ -83,7 +89,7 @@ class Kurungika {
 
         val pattern = Regex("^[0-9]{4}$")
 
-        if (x == 0) {
+        if (x.toString().contains("0") && x.toString().length == 1) {
             thirdStep()
         } else if (pattern.matches(x.toString())) {
             finalStep()
